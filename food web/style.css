@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ##########################Nanbar Styling-------------------- */
+/* -------------------For Dekstope Mode---------------- */
+.navbar input[type=checkbox],
+.navbar .hamburger-lines {
+    display: none;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    opacity: .85;
+    z-index: 999;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logo {
+    order: 1;
+}
+
+.menu-items {
+    order: 2;
+    display: flex;
+
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.menu-items li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    transition: .5s;
+    margin: auto;
+
+}
+
+.menu-items li:hover::after {
+    width: 100%;
+
+}
+
+.menu-items a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #444;
+}
+
+/* ##########################Showcase Styling#################### */
+.showcase {
+    height: 50vh;
+    background-image: linear-gradient(rgba(240, 240, 240, .142), rgba(250, 250, 250, .326)), url(img/header-image2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.showcase-area h1 {
+    text-transform: uppercase;
+}
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 1em 2.5em;
+    text-decoration: none;
+    margin-top: 1em;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    color: #fff;
+    background: #16a083;
+    font-weight: 500;
+}
+
+/* #########################about ################################ */
+#about {
+    padding: 50px 0;
+    background: #f5f5f7;
+}
+
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about h2 {
+    font-size: 3.2rem;
+}
+
+#about p {
+    font-size: 1.6rem;
+    color: #555;
+}
+
+#about .small {
+    color: #666;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+}
+
+.about-image {
+    flex-grow: 1;
+    flex-basis: 400px;
+    flex-shrink: 1;
+    padding: 30px;
+    animation: about-image-animation 1s ease-in-out forwards;
+    transform: translateX(150%);
+}
+
+@keyframes about-image-animation {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.about-text {
+    flex-grow: 1;
+    flex-basis: 400px;
+    margin: auto;
+    flex-shrink: 1;
+    padding: 30px;
+    animation: about-text-animation 1s ease-in-out forwards;
+    transform: translateX(-150%);
+}
+
+@keyframes about-text-animation {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.about-image img {
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+}
+
+/* ###############Food Category###################### */
+#food {
+    padding: 5rem 0 10rem 0;
+}
+
+#food h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #555;
+}
+
+.food-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.img-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin: auto;
+    object-position: center;
+}
+
+.img-container {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.img-content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    transition: all .3s ease-in-out .1s;
+}
+
+.img-content h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.img-content a {
+    font-size: 1.2rem;
+}
+
+.img-container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .871);
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: 0% 100%;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+}
+
+.img-container:hover::after {
+    transform: scaleY(1);
+}
+
+.img-container:hover .img-content {
+    opacity: 1;
+    top: 50%;
+}
+
+/* #########################Food Menu########################### */
+#food-menu h2 {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #666;
+}
+
+.food-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0;
+}
+
+.food-menu-container img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.food-item {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
+.food-decription {
+    margin: auto 1.5rem;
+}
+
+.food-decription h3 {
+    font-size: 2.2rem;
+    color: #444;
+    font-weight: 400;
+}
+
+.food-decription p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.food-decription .food-price {
+    color: #16a083;
+    font-weight: 700;
+}
+
+/* ################################Testimonials###################### */
+#testimonials {
+    background: rgb(243, 243, 243);
+    padding: 5rem 0rem;
+}
+
+#testimonials h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
+.testimonial-box .checked {
+    color: #ff9529;
+}
+
+.testimonial-box p {
+    margin: 1rem 0;
+    color: #444;
+}
+
+.testimonial-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+.customer-detail img {
+    width: 100px;
+    display: block;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* ########################Contact#################### */
+#contact {
+    padding: 5rem 0;
+    background: rgb(226, 226, 226);
+}
+
+.contact-container {
+    display: flex;
+    background: #fff;
+}
+
+.contact-image {
+    width: 50%;
+}
+
+.contact-image img {
+    width: 100%;
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form-container {
+    padding: 1rem;
+    margin: auto;
+    width: 50%;
+
+}
+
+.form-container input {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    width: 100%;
+    color: #444;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.form-container textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.form-container a {
+    font-size: 1.2rem;
+}
+
+.form-container h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* ######################Footer####################### */
+#footer h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 3rem;
+    color: #fff;
+    background: rgb(65, 65, 65);
+}
+
+/* --------------------------Media Quaires----------------- */
+@media (max-width:768px) {
+    .navbar {
+        opacity: .95;
+    }
+
+    .navbar input[type=checkbox],
+    .navbar .hamburger-lines {
+        display: block;
+    }
+
+    .navbar-container {
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar input[type=checkbox] {
+        display: block;
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        right: 0px;
+        z-index: 5;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .navbar .hamburger-lines {
+        display: block;
+        width: 40px;
+        height: 32px;
+        z-index: 2;
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar .hamburger-lines .line {
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 10px;
+        background: #333333;
+    }
+
+    .hamburger-lines .line-1 {
+        transition: transform .4s ease-in-out;
+        transform-origin: 100% 0%;
+    }
+
+    .hamburger-lines .line-2 {
+        transition: transform .4s ease-in-out;
+    }
+
+    .hamburger-lines .line-3 {
+        transition: transform .4s ease-in-out;
+        transform-origin: 100% 100%;
+    }
+
+    .navbar .menu-items {
+        padding-top: 100px;
+        background: #fff;
+        max-width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(120%);
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform .5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+    }
+
+    .navbar .menu-items li {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .menu-items li:hover::after {
+        width: 0%;
+
+    }
+
+    .logo {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+    }
+
+    .navbar input[type=checkbox]:checked~.menu-items {
+        transform: translateX(50%);
+    }
+
+    .navbar input[type=checkbox]:checked~.hamburger-lines .line-1 {
+        transform: rotate(-45deg);
+    }
+
+    .navbar input[type=checkbox]:checked~.hamburger-lines .line-2 {
+        transform: scaleY(0);
+    }
+
+    .navbar input[type=checkbox]:checked~.hamburger-lines .line-3 {
+        transform: rotate(45deg);
+    }
+
+    /* @@@@@@@@@@@@@@@Food Category@@@@@@@@@@@@ */
+    .food-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .food-type:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    .food-type {
+        box-shadow: 5px 5px 10px 0px #aaa;
+    }
+
+    .img-container {
+        margin: 0;
+    }
+}
+
+@media (max-width:500px) {
+    html {
+        font-size: 50%;
+    }
+.testimonial-container{
+    flex-direction: column;
+    text-align: center;
+}
+.food-item{
+    flex-direction: column;
+    text-align: center;
+}
+.food-menu-container img{
+    margin: auto;
+
+}
+.form-container{
+width: 90%;
+}
+.contact-container{
+display: flex;
+flex-direction: column;
+}
+.contact-image{
+    width: 90%;
+    margin: 3rem auto;
+}
+}
+  
